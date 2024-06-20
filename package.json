@@ -1,0 +1,29 @@
+{
+  "name": "auction-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha",
+    "seed": "node commands/seed.js",
+    "delete": "node commands/delete.js",
+    "delete-one": "node commands/deleteOne.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "chai": "^5.1.1",
+    "commander": "^12.1.0",
+    "express": "^4.19.2",
+    "gitignore": "^0.7.0",
+    "inquirer": "^9.2.23",
+    "mocha": "^10.4.0",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.3",
+    "sinon": "^18.0.0"
+  }
+}
