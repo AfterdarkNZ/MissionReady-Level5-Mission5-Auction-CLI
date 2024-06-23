@@ -9,7 +9,7 @@
     "test": "mocha",
     "seed": "node commands/seed.js",
     "delete": "node commands/delete.js",
-    "delete-one": "node commands/deleteOne.js"
+    "deleteOne": "node commands/deleteOne.js"
   },
   "keywords": [],
   "author": "",

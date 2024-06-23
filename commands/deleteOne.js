@@ -1,9 +1,8 @@
 // Import necessary modules
 import connectDB from "../config/db.js";
 import AuctionItem from "../models/AuctionItem.js";
-import { program } from "commander";
 
-const deleteOneItem = async (index) => {
+const deleteOne = async (index) => {
   await connectDB();
   try {
     const items = await AuctionItem.find().sort({ _id: 1 }).exec();
@@ -22,21 +21,19 @@ const deleteOneItem = async (index) => {
       `Item with index ${index} (title: "${itemToDelete.title}") deleted successfully`
     );
   } catch (err) {
-    console.error(err);
+    console.error("An error occurred when deleteing the item:", err);
+    process.exit(1);
   } finally {
-    process.exit();
+    process.exit(0);
   }
 };
 
-program
-  .requiredOption("-i, --index <index>", "Index of the item to delete")
-  .parse(process.argv);
+// Get the index from the command line arguments
+const index = parseInt(process.argv[2], 10);
 
-const options = program.opts();
-const index = parseInt(options.index, 10);
 if (isNaN(index)) {
   console.error("Index must be a valid number");
   process.exit(1);
 }
 
-deleteOneItem(index);
+deleteOne(index);

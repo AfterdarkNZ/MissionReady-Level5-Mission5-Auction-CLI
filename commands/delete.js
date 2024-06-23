@@ -14,3 +14,5 @@ const deleteDatabase = async () => {
   }
 };
 deleteDatabase();
+
+export default deleteDatabase();
