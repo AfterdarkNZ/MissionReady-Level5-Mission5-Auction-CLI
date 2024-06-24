@@ -21,19 +21,11 @@ const deleteOne = async (index) => {
       `Item with index ${index} (title: "${itemToDelete.title}") deleted successfully`
     );
   } catch (err) {
-    console.error("An error occurred when deleteing the item:", err);
+    console.error("An error occurred when deleting the item:", err);
     process.exit(1);
   } finally {
     process.exit(0);
   }
 };
 
-// Get the index from the command line arguments
-const index = parseInt(process.argv[2], 10);
-
-if (isNaN(index)) {
-  console.error("Index must be a valid number");
-  process.exit(1);
-}
-
-deleteOne(index);
+export default deleteOne; // Export the deleteOne function without invoking it
